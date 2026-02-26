@@ -46,15 +46,18 @@ inputStatus();
 myBtn.addEventListener("click", () => {
     const cpuHPIndex = document.querySelector("#cpuHPIndex");
     const NewHP = HPcheck(myStatus, cpuStatus);
-    cpuStatus.HP = NewHP;
-    const HPpercent = (NewHP / cpuStatus.MAXHP) * 100;
+    const nowDamage = cpuStatus.HP - NewHP.newHP;
+    console.log(nowDamage);
+
+    cpuStatus.HP = NewHP.newHP;
+    const HPpercent = (NewHP.newHP / cpuStatus.MAXHP) * 100;
     cpuHPbar.style.width = `${HPpercent}%`;
     cpuHPIndex.textContent = `${cpuStatus.HP}`;
     let logMessage = "";
     if (cpuStatus.HP == 0) {
-        logMessage = `${myStatus.Name}の勝利！！！！`;
+        logMessage = `${myStatus.Name}の勝利！！！！${NewHP.damage}のダメージ！`;
     } else {
-        logMessage = `${myStatus.Name}の攻撃！`;
+        logMessage = `${myStatus.Name}の攻撃！${NewHP.damage}のダメージ！`;
     }
     turnCount++;
     inputStatus(logMessage, turnCount);
@@ -63,15 +66,18 @@ myBtn.addEventListener("click", () => {
 cpuBtn.addEventListener("click", () => {
     const myHPIndex = document.querySelector("#myHPIndex");
     const NewHP = HPcheck(cpuStatus, myStatus);
-    myStatus.HP = NewHP;
-    const HPpercent = (NewHP / myStatus.MAXHP) * 100;
+    const nowDamage = NewHP.newHP;
+    console.log(nowDamage);
+
+    myStatus.HP = NewHP.newHP;
+    const HPpercent = (NewHP.newHP / myStatus.MAXHP) * 100;
     myHPbar.style.width = `${HPpercent}%`;
     myHPIndex.textContent = `${myStatus.HP}`;
     let logMessage = "";
     if (myStatus.HP == 0) {
-        logMessage = `${cpuStatus.Name}の勝利！！！！`;
+        logMessage = `${cpuStatus.Name}の勝利！！！！${NewHP.damage}のダメージ！`;
     } else {
-        logMessage = `${cpuStatus.Name}の攻撃！`;
+        logMessage = `${cpuStatus.Name}の攻撃！${NewHP.damage}のダメージ！`;
     }
     turnCount++;
     inputStatus(logMessage, turnCount);
@@ -91,5 +97,8 @@ function HPcheck(ATkside, DEFside) {
     if (NewHP <= 0) {
         NewHP = 0;
     }
-    return NewHP;
+    return {
+        newHP: NewHP,
+        damage: damage,
+    };
 }
