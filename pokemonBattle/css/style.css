@@ -36,11 +36,13 @@ header {
                 margin-left: 6px;
             }
         }
-        button {
+        button,
+        a {
             display: block;
             background-color: var(--resetColor);
             color: var(--fontColor);
             padding: 10px 20px;
+            text-decoration: none;
         }
     }
 }
