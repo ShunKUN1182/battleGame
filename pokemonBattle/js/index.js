@@ -18,12 +18,16 @@ const myName = document.querySelector("#myName");
 const cpuName = document.querySelector("#cpuName");
 const myStartHP = document.querySelector("#myStartHP");
 const cpuStartHP = document.querySelector("#cpuStartHP");
+const battleLog = document.querySelector("#battleLog");
+const myBtn = document.querySelector("#my_atk_btn");
+const cpuBtn = document.querySelector("#cpu_atk_btn");
 
-function inputStatus(my, cpu) {
+function inputStatus(my, cpu, log = "何も起こらなかった！！") {
     myName.innerHTML = my.Name;
     cpuName.innerHTML = cpu.Name;
     myStartHP.innerHTML = `<span>${my.HP}</span>/${my.HP}`;
     cpuStartHP.innerHTML = `<span>${cpu.HP}</span>/${cpu.HP}`;
+    battleLog.innerHTML = log;
 }
 
 inputStatus(myStatus, cpuStatus);
