@@ -92,10 +92,12 @@ main {
             }
             .hp_bar {
                 width: 100%;
-                height: 20px;
+                height: 25px;
                 border-radius: 30px;
                 background-color: var(--hpColor);
                 margin-top: 15px;
+                border: 2px solid var(--resetColor);
+                transition: 0.5s;
             }
             button {
                 margin-top: 20px;

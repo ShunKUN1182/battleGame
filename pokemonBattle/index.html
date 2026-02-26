@@ -9,15 +9,15 @@
     </head>
     <body>
         <header>
-            <h1>Battle Special</h1>
+            <h1>ECC Battle Special</h1>
             <div>
-                <p>ターン<span>1</span></p>
+                <p>ターン<span id="turnIndex">1</span></p>
                 <button>リセット</button>
             </div>
         </header>
         <main>
             <div class="turnCheck">
-                <h2><span>あなた</span>のターンです</h2>
+                <h2><span id="turnName">あなた</span>のターンです</h2>
             </div>
             <div class="battle_status">
                 <div class="player_box my_box">
@@ -25,10 +25,10 @@
                         <h2 id="myName">あなた</h2>
                         <div class="hp_box">
                             <h3>HP</h3>
-                            <p id="myStartHP"><span>100</span>/100</p>
+                            <p id="myStartHP"><span id="myHPIndex">100</span>/100</p>
                         </div>
                     </div>
-                    <div class="hp_bar"></div>
+                    <div class="hp_bar" id="myHPbar"></div>
                     <button id="my_atk_btn">攻撃</button>
                 </div>
 
@@ -41,10 +41,10 @@
                         <h2 id="cpuName">CPU</h2>
                         <div class="hp_box">
                             <h3>HP</h3>
-                            <p id="cpuStartHP"><span>100</span>/100</p>
+                            <p id="cpuStartHP"><span id="cpuHPIndex">100</span>/100</p>
                         </div>
                     </div>
-                    <div class="hp_bar"></div>
+                    <div class="hp_bar" id="cpuHPbar"></div>
                     <button id="cpu_atk_btn">攻撃</button>
                 </div>
             </div>
