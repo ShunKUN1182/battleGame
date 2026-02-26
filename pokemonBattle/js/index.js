@@ -5,6 +5,7 @@ const characters = [
     {
         Name: "細川とわ",
         HP: 30,
+        MAXHP: 30,
         ATK: 140,
         DEF: 70,
         SPD: 70,
@@ -13,6 +14,7 @@ const characters = [
     {
         Name: "えもじの子",
         HP: 100,
+        MAXHP: 100,
         ATK: 50,
         DEF: 50,
         SPD: 85,
@@ -21,6 +23,7 @@ const characters = [
     {
         Name: "フクシマ",
         HP: 50,
+        MAXHP: 50,
         ATK: 40,
         DEF: 80,
         SPD: 60,
@@ -29,6 +32,7 @@ const characters = [
     {
         Name: "ハラバリー",
         HP: 109,
+        MAXHP: 109,
         ATK: 64,
         DEF: 91,
         SPD: 45,
@@ -37,6 +41,7 @@ const characters = [
     {
         Name: "地雷系少女",
         HP: 60,
+        MAXHP: 60,
         ATK: 100,
         DEF: 30,
         SPD: 90,
@@ -45,6 +50,7 @@ const characters = [
     {
         Name: "黄ばみフクシマ",
         HP: 20,
+        MAXHP: 20,
         ATK: 120,
         DEF: 60,
         SPD: 10,
@@ -53,6 +59,7 @@ const characters = [
     {
         Name: "モフレム",
         HP: 19,
+        MAXHP: 19,
         ATK: 91,
         DEF: 90,
         SPD: 42,
@@ -61,6 +68,7 @@ const characters = [
     {
         Name: "モナリザ",
         HP: 70,
+        MAXHP: 70,
         ATK: 99,
         DEF: 22,
         SPD: 55,
@@ -69,6 +77,7 @@ const characters = [
     {
         Name: "ナッシー",
         HP: 95,
+        MAXHP: 95,
         ATK: 95,
         DEF: 85,
         SPD: 55,
@@ -77,6 +86,7 @@ const characters = [
     {
         Name: "ネイズ",
         HP: 8,
+        MAXHP: 8,
         ATK: 14,
         DEF: 75,
         SPD: 5,
@@ -85,6 +95,7 @@ const characters = [
     {
         Name: "ニンゲン",
         HP: 32,
+        MAXHP: 32,
         ATK: 83,
         DEF: 49,
         SPD: 72,
@@ -93,6 +104,7 @@ const characters = [
     {
         Name: "ウリムー",
         HP: 50,
+        MAXHP: 50,
         ATK: 50,
         DEF: 40,
         SPD: 50,

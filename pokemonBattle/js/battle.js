@@ -45,8 +45,9 @@ inputStatus();
 
 myBtn.addEventListener("click", () => {
     const cpuHPIndex = document.querySelector("#cpuHPIndex");
-    const HPpercent = (HPcheck(myStatus, cpuStatus) / cpuStatus.HP) * 100;
-    cpuStatus.HP = HPcheck(myStatus, cpuStatus);
+    const NewHP = HPcheck(myStatus, cpuStatus);
+    cpuStatus.HP = NewHP;
+    const HPpercent = (NewHP / cpuStatus.MAXHP) * 100;
     cpuHPbar.style.width = `${HPpercent}%`;
     cpuHPIndex.textContent = `${cpuStatus.HP}`;
     let logMessage = "";
@@ -61,8 +62,9 @@ myBtn.addEventListener("click", () => {
 
 cpuBtn.addEventListener("click", () => {
     const myHPIndex = document.querySelector("#myHPIndex");
-    const HPpercent = (HPcheck(cpuStatus, myStatus) / myStatus.HP) * 100;
-    myStatus.HP = HPcheck(cpuStatus, myStatus);
+    const NewHP = HPcheck(cpuStatus, myStatus);
+    myStatus.HP = NewHP;
+    const HPpercent = (NewHP / myStatus.MAXHP) * 100;
     myHPbar.style.width = `${HPpercent}%`;
     myHPIndex.textContent = `${myStatus.HP}`;
     let logMessage = "";
@@ -82,7 +84,8 @@ resetBtn.addEventListener("click", () => {
 function HPcheck(ATkside, DEFside) {
     let damage = ATkside.ATK - DEFside.DEF;
     if (damage <= 0) {
-        damage = 1;
+        const randomDamage = Math.floor(Math.random() * 3);
+        damage = randomDamage + 1;
     }
     let NewHP = DEFside.HP - damage;
     if (NewHP <= 0) {
