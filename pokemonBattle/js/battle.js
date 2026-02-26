@@ -1,18 +1,18 @@
-let myStatus = {
-    Name: "しゅんや",
-    HP: 120,
-    ATK: 100,
-    DEF: 50,
-    SPD: 45,
-};
+// let myStatus = {
+//     Name: "しゅんや",
+//     HP: 120,
+//     ATK: 100,
+//     DEF: 50,
+//     SPD: 45,
+// };
 
-let cpuStatus = {
-    Name: "とわ",
-    HP: 90,
-    ATK: 140,
-    DEF: 30,
-    SPD: 70,
-};
+// let cpuStatus = {
+//     Name: "とわ",
+//     HP: 90,
+//     ATK: 140,
+//     DEF: 30,
+//     SPD: 70,
+// };
 
 const myName = document.querySelector("#myName");
 const cpuName = document.querySelector("#cpuName");
@@ -27,6 +27,9 @@ const myHPbar = document.querySelector("#myHPbar");
 const cpuHPbar = document.querySelector("#cpuHPbar");
 const resetBtn = document.querySelector("#reset_btn");
 let turnCount = 1;
+
+let myStatus = JSON.parse(localStorage.getItem("myCharacter"));
+let cpuStatus = JSON.parse(localStorage.getItem("cpuCharacter"));
 
 myStartHP.innerHTML = `<span id="myHPIndex">${myStatus.HP}</span>/${myStatus.HP}`;
 cpuStartHP.innerHTML = `<span id="cpuHPIndex">${cpuStatus.HP}</span>/${cpuStatus.HP}`;
@@ -79,7 +82,7 @@ resetBtn.addEventListener("click", () => {
 function HPcheck(ATkside, DEFside) {
     let damage = ATkside.ATK - DEFside.DEF;
     if (damage <= 0) {
-        damage = 0;
+        damage = 1;
     }
     let NewHP = DEFside.HP - damage;
     if (NewHP <= 0) {
