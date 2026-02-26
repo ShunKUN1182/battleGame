@@ -22,14 +22,14 @@
             <div class="battle_status">
                 <div class="player_box my_box">
                     <div class="name_box">
-                        <h2>あなた</h2>
+                        <h2 id="myName">あなた</h2>
                         <div class="hp_box">
                             <h3>HP</h3>
-                            <p><span>100</span>/100</p>
+                            <p id="myStartHP"><span>100</span>/100</p>
                         </div>
                     </div>
                     <div class="hp_bar"></div>
-                    <button id="atk_btn">攻撃</button>
+                    <button id="my_atk_btn">攻撃</button>
                 </div>
 
                 <div class="vs_box">
@@ -38,14 +38,14 @@
 
                 <div class="player_box cpu_box">
                     <div class="name_box">
-                        <h2>CPU</h2>
+                        <h2 id="cpuName">CPU</h2>
                         <div class="hp_box">
                             <h3>HP</h3>
-                            <p><span>100</span>/100</p>
+                            <p id="cpuStartHP"><span>100</span>/100</p>
                         </div>
                     </div>
                     <div class="hp_bar"></div>
-                    <button id="atk_btn">攻撃</button>
+                    <button id="cpu_atk_btn">攻撃</button>
                 </div>
             </div>
             <div class="battle_log">

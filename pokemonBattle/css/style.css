@@ -97,7 +97,7 @@ main {
                 background-color: var(--hpColor);
                 margin-top: 15px;
             }
-            #atk_btn {
+            button {
                 margin-top: 20px;
                 height: 40px;
                 border-radius: 20px;
