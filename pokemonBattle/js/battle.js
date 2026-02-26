@@ -25,6 +25,7 @@ const turnName = document.querySelector("#turnName");
 const turnIndex = document.querySelector("#turnIndex");
 const myHPbar = document.querySelector("#myHPbar");
 const cpuHPbar = document.querySelector("#cpuHPbar");
+const resetBtn = document.querySelector("#reset_btn");
 let turnCount = 1;
 
 myStartHP.innerHTML = `<span id="myHPIndex">${myStatus.HP}</span>/${myStatus.HP}`;
@@ -45,7 +46,6 @@ myBtn.addEventListener("click", () => {
     cpuStatus.HP = HPcheck(myStatus, cpuStatus);
     cpuHPbar.style.width = `${HPpercent}%`;
     cpuHPIndex.textContent = `${cpuStatus.HP}`;
-    console.log(cpuStatus);
     let logMessage = "";
     if (cpuStatus.HP == 0) {
         logMessage = `${myStatus.Name}の勝利！！！！`;
@@ -70,6 +70,10 @@ cpuBtn.addEventListener("click", () => {
     }
     turnCount++;
     inputStatus(logMessage, turnCount);
+});
+
+resetBtn.addEventListener("click", () => {
+    localStorage.clear();
 });
 
 function HPcheck(ATkside, DEFside) {
