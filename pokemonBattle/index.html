@@ -3,10 +3,51 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>ポケモンバトルだぞ</title>
+        <title>バトルだぞ</title>
+        <link rel="stylesheet" href="css/style.css" />
         <script defer src="js/index.js"></script>
     </head>
     <body>
-        <button id="startBtn">戦う</button>
+        <header>
+            <h1>Battle Special</h1>
+            <div>
+                <p>ターン<span>1</span></p>
+                <button>リセット</button>
+            </div>
+        </header>
+        <main>
+            <div class="turnCheck">
+                <h2><span>あなた</span>のターンです</h2>
+            </div>
+            <div class="battle_status">
+                <div class="player_box my_box">
+                    <div class="name_box">
+                        <h2>あなた</h2>
+                        <div class="hp_box">
+                            <h3>HP</h3>
+                            <p><span>100</span>/100</p>
+                        </div>
+                    </div>
+                    <div class="hp_bar"></div>
+                    <button id="atk_btn">攻撃</button>
+                </div>
+
+                <div class="vs_box">
+                    <p>VS</p>
+                </div>
+
+                <div class="player_box cpu_box">
+                    <div class="name_box">
+                        <h2>CPU</h2>
+                        <div class="hp_box">
+                            <h3>HP</h3>
+                            <p><span>100</span>/100</p>
+                        </div>
+                    </div>
+                    <div class="hp_bar"></div>
+                    <button id="atk_btn">攻撃</button>
+                </div>
+            </div>
+        </main>
     </body>
 </html>

@@ -42,10 +42,15 @@ startBtn.addEventListener("click", () => {
     const cpuPickPokemon = cpuPokemons[0];
     if (myPickPokemon.Speed >= cpuPickPokemon.Speed) {
         console.log("私の攻撃");
-        cpuPickPokemon.HP = cpuPickPokemon.HP - (myPickPokemon.ATK - cpuPickPokemon.DEF);
-        console.log("残りHP:", cpuPickPokemon.HP);
+        cpuPickPokemon.HP = HPCheck(myPickPokemon, cpuPickPokemon);
+        console.log(cpuPickPokemon);
     } else {
         console.log("相手の攻撃");
         myPickPokemon.HP = myPickPokemon.HP - (cpuPickPokemon.ATK - myPickPokemon.DEF);
     }
 });
+
+function HPCheck(ATkside, DFEside) {
+    DFEside.HP = DFEside.HP - (ATkside.ATK - DFEside.DEF);
+    return DFEside.HP;
+}
