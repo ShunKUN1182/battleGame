@@ -1,19 +1,3 @@
-// let myStatus = {
-//     Name: "しゅんや",
-//     HP: 120,
-//     ATK: 100,
-//     DEF: 50,
-//     SPD: 45,
-// };
-
-// let cpuStatus = {
-//     Name: "とわ",
-//     HP: 90,
-//     ATK: 140,
-//     DEF: 30,
-//     SPD: 70,
-// };
-
 const myName = document.querySelector("#myName");
 const cpuName = document.querySelector("#cpuName");
 const myStartHP = document.querySelector("#myStartHP");
@@ -90,7 +74,7 @@ resetBtn.addEventListener("click", () => {
 function HPcheck(ATkside, DEFside) {
     let damage = ATkside.ATK - DEFside.DEF;
     if (damage <= 0) {
-        const randomDamage = Math.floor(Math.random() * 3);
+        const randomDamage = Math.floor(Math.random() * 5);
         damage = randomDamage + 1;
     }
     let NewHP = DEFside.HP - damage;
