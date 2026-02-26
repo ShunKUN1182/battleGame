@@ -1,0 +1,18 @@
+main {
+    margin-top: 60px;
+}
+
+.random_select {
+    margin-top: 50px;
+    button {
+        display: block;
+        width: 400px;
+        height: 100px;
+        border-radius: 30px;
+        border: var(--boxColor) 3px solid;
+        background-color: var(--resetColor);
+        color: var(--fontColor);
+        font-weight: bold;
+        font-size: 30px;
+    }
+}
