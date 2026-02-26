@@ -25,27 +25,30 @@ const turnName = document.querySelector("#turnName");
 const turnIndex = document.querySelector("#turnIndex");
 const myHPbar = document.querySelector("#myHPbar");
 const cpuHPbar = document.querySelector("#cpuHPbar");
-// const myHPIndex = document.querySelector("#myHPIndex");
-// const cpuHPIndex = document.querySelector("#cpuHPIndex");
+let turnCount = 1;
+
 myStartHP.innerHTML = `<span id="myHPIndex">${myStatus.HP}</span>/${myStatus.HP}`;
 cpuStartHP.innerHTML = `<span id="cpuHPIndex">${cpuStatus.HP}</span>/${cpuStatus.HP}`;
 myName.innerHTML = myStatus.Name;
 cpuName.innerHTML = cpuStatus.Name;
 
-function inputStatus(log = "何も起こらなかった！！") {
+function inputStatus(log = "何も起こらなかった！！", count = 1) {
     battleLog.innerHTML = log;
+    turnIndex.textContent = count;
 }
 
-inputStatus(myStatus, cpuStatus);
+inputStatus();
 
 myBtn.addEventListener("click", () => {
-    const myHPIndex = document.querySelector("#myHPIndex");
     const cpuHPIndex = document.querySelector("#cpuHPIndex");
     const HPpercent = (HPcheck(myStatus, cpuStatus) / cpuStatus.HP) * 100;
     cpuStatus.HP = HPcheck(myStatus, cpuStatus);
     cpuHPbar.style.width = `${HPpercent}%`;
     cpuHPIndex.textContent = `${cpuStatus.HP}`;
     console.log(cpuStatus);
+    let logMessage = `${myStatus.Name}の攻撃！`;
+    turnCount++;
+    inputStatus(logMessage, turnCount);
 });
 
 function HPcheck(ATkside, DEFside) {
