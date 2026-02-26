@@ -25,24 +25,27 @@ const turnName = document.querySelector("#turnName");
 const turnIndex = document.querySelector("#turnIndex");
 const myHPbar = document.querySelector("#myHPbar");
 const cpuHPbar = document.querySelector("#cpuHPbar");
-const myHPIndex = document.querySelector("#myHPIndex");
-const cpuHPIndex = document.querySelector("#cpuHPIndex");
+// const myHPIndex = document.querySelector("#myHPIndex");
+// const cpuHPIndex = document.querySelector("#cpuHPIndex");
+myStartHP.innerHTML = `<span id="myHPIndex">${myStatus.HP}</span>/${myStatus.HP}`;
+cpuStartHP.innerHTML = `<span id="cpuHPIndex">${cpuStatus.HP}</span>/${cpuStatus.HP}`;
+myName.innerHTML = myStatus.Name;
+cpuName.innerHTML = cpuStatus.Name;
 
-function inputStatus(my, cpu, log = "何も起こらなかった！！") {
-    myName.innerHTML = my.Name;
-    cpuName.innerHTML = cpu.Name;
-    myStartHP.innerHTML = `<span>${my.HP}</span>/${my.HP}`;
-    cpuStartHP.innerHTML = `<span>${cpu.HP}</span>/${cpu.HP}`;
+function inputStatus(log = "何も起こらなかった！！") {
     battleLog.innerHTML = log;
 }
 
 inputStatus(myStatus, cpuStatus);
 
 myBtn.addEventListener("click", () => {
+    const myHPIndex = document.querySelector("#myHPIndex");
+    const cpuHPIndex = document.querySelector("#cpuHPIndex");
     const HPpercent = (HPcheck(myStatus, cpuStatus) / cpuStatus.HP) * 100;
     cpuStatus.HP = HPcheck(myStatus, cpuStatus);
     cpuHPbar.style.width = `${HPpercent}%`;
-    cpuHPIndex.textContent = `${HPcheck(myStatus, cpuStatus)}`;
+    cpuHPIndex.textContent = `${cpuStatus.HP}`;
+    console.log(cpuStatus);
 });
 
 function HPcheck(ATkside, DEFside) {
