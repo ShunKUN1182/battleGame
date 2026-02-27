@@ -29,18 +29,26 @@ function startTurn() {
     if (myStatus.SPD >= cpuStatus.SPD) {
         console.log("君が早いぜ");
         myStatus.TURN = true;
+        turnName.textContent = "あなた";
         console.log(myStatus, cpuStatus);
     } else {
         console.log("君が遅いぜ");
         cpuStatus.TURN = true;
         console.log(myStatus, cpuStatus);
+        turnName.textContent = "相手";
     }
 }
+
+function turnChange(atkSide, defSide) {}
 
 inputStatus();
 startTurn();
 
 myBtn.addEventListener("click", () => {
+    if (!myStatus.TURN) {
+        inputStatus("あんたのターンとちゃうで！！！！！！", turnCount);
+        return;
+    }
     const cpuHPIndex = document.querySelector("#cpuHPIndex");
     const NewHP = HPcheck(myStatus, cpuStatus);
     const nowDamage = cpuStatus.HP - NewHP.newHP;
@@ -57,10 +65,19 @@ myBtn.addEventListener("click", () => {
         logMessage = `${myStatus.Name}の攻撃！${NewHP.damage}のダメージ！`;
     }
     turnCount++;
+    myStatus.TURN = false;
+    cpuStatus.TURN = true;
+    myBtn.classList.add("no_atk");
+    cpuBtn.classList.remove("no_atk");
+    turnName.textContent = "相手";
     inputStatus(logMessage, turnCount);
 });
 
 cpuBtn.addEventListener("click", () => {
+    if (!cpuStatus.TURN) {
+        inputStatus("あんたのターンとちゃうで！！！！！！", turnCount);
+        return;
+    }
     const myHPIndex = document.querySelector("#myHPIndex");
     const NewHP = HPcheck(cpuStatus, myStatus);
     const nowDamage = NewHP.newHP;
@@ -77,6 +94,11 @@ cpuBtn.addEventListener("click", () => {
         logMessage = `${cpuStatus.Name}の攻撃！${NewHP.damage}のダメージ！`;
     }
     turnCount++;
+    myStatus.TURN = true;
+    cpuStatus.TURN = false;
+    turnName.textContent = "あなた";
+    cpuBtn.classList.add("no_atk");
+    myBtn.classList.remove("no_atk");
     inputStatus(logMessage, turnCount);
 });
 

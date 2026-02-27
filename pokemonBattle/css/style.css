@@ -120,6 +120,8 @@ main {
             }
             .no_atk {
                 background-color: rgba(74, 85, 101, 0.2);
+                color: #364153;
+                border: 1px solid var(--resetColor);
                 &:hover {
                     background-color: rgba(74, 85, 101, 0.3);
                 }
