@@ -16,7 +16,6 @@
 body {
     background-color: var(--bgColor);
     color: var(--fontColor);
-    /* font-weight: bold; */
 }
 
 header {

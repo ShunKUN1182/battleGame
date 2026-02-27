@@ -46,7 +46,6 @@ main {
     }
     a {
         display: block;
-        /* width: ; */
         padding: 20px 30px;
         background-color: var(--boxColor);
         border-radius: 20px;
