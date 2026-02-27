@@ -279,7 +279,7 @@ const characters = [
         ATK: 118,
         DEF: 110,
         SPD: 72,
-        IMG: "img/magao_hosokawa",
+        IMG: "img/magao_hosokawa.png",
         TURN: false,
     },
     {
@@ -289,7 +289,7 @@ const characters = [
         ATK: 142,
         DEF: 38,
         SPD: 46,
-        IMG: "img/",
+        IMG: "img/majin_sakaguti.JPG",
         TURN: false,
     },
     {
@@ -299,7 +299,7 @@ const characters = [
         ATK: 18,
         DEF: 12,
         SPD: 33,
-        IMG: "img/",
+        IMG: "img/nanjmin.png",
         TURN: false,
     },
     {
@@ -339,7 +339,7 @@ const characters = [
         ATK: 224,
         DEF: 102,
         SPD: 104,
-        IMG: "img/super_nissy",
+        IMG: "img/super_nissy.jpg",
         TURN: false,
     },
     {
