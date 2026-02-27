@@ -413,9 +413,9 @@ btn.addEventListener("click", () => {
     localStorage.setItem("myCharacter", JSON.stringify(characters[randomNum]));
     localStorage.setItem("cpuCharacter", JSON.stringify(characters[cpuRandomNum]));
     btnAfter.innerHTML = `
-          <h2>ガチャ結果</h2>
+        <h2>ガチャ結果</h2>
         <img src="${characters[randomNum].IMG}" alt=""/>
         <h2>${characters[randomNum].Name}がとびだしてきた!!!!</h2>
         <a href="battle.html">バトルしにいく！！！</a>
-  `;
+    `;
 });
