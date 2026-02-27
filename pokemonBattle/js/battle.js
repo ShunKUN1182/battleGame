@@ -25,7 +25,20 @@ function inputStatus(log = "バトル開始！！！", count = 1) {
     turnIndex.textContent = count;
 }
 
+function startTurn() {
+    if (myStatus.SPD >= cpuStatus.SPD) {
+        console.log("君が早いぜ");
+        myStatus.TURN = true;
+        console.log(myStatus, cpuStatus);
+    } else {
+        console.log("君が遅いぜ");
+        cpuStatus.TURN = true;
+        console.log(myStatus, cpuStatus);
+    }
+}
+
 inputStatus();
+startTurn();
 
 myBtn.addEventListener("click", () => {
     const cpuHPIndex = document.querySelector("#cpuHPIndex");
