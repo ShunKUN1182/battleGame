@@ -1,7 +1,6 @@
 .emikuji_box {
     display: flex;
     justify-content: center;
-    /* align-items: center; */
     height: 100vh;
     div {
         height: 700px;

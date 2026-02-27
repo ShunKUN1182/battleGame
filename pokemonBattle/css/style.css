@@ -20,7 +20,7 @@ body {
 
 header {
     width: 1000px;
-    margin: 200px auto 40px;
+    margin: 150px auto 40px;
     display: flex;
     justify-content: space-between;
     div {
