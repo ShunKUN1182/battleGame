@@ -137,6 +137,14 @@ main {
                     background-color: rgba(74, 85, 101, 0.3);
                 }
             }
+            .ex_btn {
+                background-color: rgba(251, 255, 3, 0.3);
+                color: var(--fontColor);
+                border: 1px solid var(--boxColor);
+                &:hover {
+                    background-color: rgba(251, 255, 3, 0.5);
+                }
+            }
         }
         .vs_box {
             width: 60px;
