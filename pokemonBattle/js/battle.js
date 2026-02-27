@@ -28,14 +28,12 @@ function inputStatus(log = "バトル開始！！！", count = 1) {
 
 function startTurn() {
     if (myStatus.SPD >= cpuStatus.SPD) {
-        console.log("君が早いぜ");
         myStatus.TURN = true;
         turnName.textContent = "あなた";
-        console.log(myStatus, cpuStatus);
+        cpuBtn.classList.add("no_atk");
     } else {
-        console.log("君が遅いぜ");
         cpuStatus.TURN = true;
-        console.log(myStatus, cpuStatus);
+        myBtn.classList.add("no_atk");
         turnName.textContent = "相手";
     }
 }
