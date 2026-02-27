@@ -372,6 +372,36 @@ const characters = [
         IMG: "img/zetubou.png",
         TURN: false,
     },
+    {
+        Name: "情けないあまね",
+        HP: 42,
+        MAXHP: 42,
+        ATK: 70,
+        DEF: 60,
+        SPD: 17,
+        IMG: "img/nasakena_ueda.jpg",
+        TURN: false,
+    },
+    {
+        Name: "魔神うえだ",
+        HP: 130,
+        MAXHP: 130,
+        ATK: 124,
+        DEF: 120,
+        SPD: 127,
+        IMG: "img/ueda_majin.jpg",
+        TURN: false,
+    },
+    {
+        Name: "瀧本先生（怒り）",
+        HP: 2404,
+        MAXHP: 2404,
+        ATK: 9999,
+        DEF: 2000,
+        SPD: 500,
+        IMG: "img/takimoto_ikari.jpg",
+        TURN: false,
+    },
 ];
 
 btn.addEventListener("click", () => {
