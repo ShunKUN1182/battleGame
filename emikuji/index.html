@@ -31,20 +31,24 @@
             const hosokawa = document.querySelector("#hosokawa");
             const nisida = document.querySelector("#nisida");
             const membars = document.querySelectorAll(".emikuji_box");
+            const sound = new Audio("oto.mp3");
             btn.addEventListener("click", () => {
                 const randomNum = Math.floor(Math.random() * membars.length);
                 console.log(randomNum);
                 fukusima.style.display = "none";
                 hosokawa.style.display = "none";
                 nisida.style.display = "none";
-
-                if (randomNum == 0) {
-                    fukusima.style.display = "flex";
-                } else if (randomNum == 1) {
-                    hosokawa.style.display = "flex";
-                } else {
-                    nisida.style.display = "flex";
-                }
+                setTimeout(() => {
+                    sound.currentTime = 0;
+                    sound.play();
+                    if (randomNum == 0) {
+                        fukusima.style.display = "flex";
+                    } else if (randomNum == 1) {
+                        hosokawa.style.display = "flex";
+                    } else {
+                        nisida.style.display = "flex";
+                    }
+                }, 100);
             });
         </script>
     </body>
