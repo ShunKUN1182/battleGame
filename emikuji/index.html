@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ランダムガチャ</title>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <div class="btn">
+            <button>順番を決める</button>
+        </div>
+        <div class="emikuji_box" id="fukusima">
+            <div>
+                <h1>福島 駿弥</h1>
+            </div>
+        </div>
+        <div class="emikuji_box" id="hosokawa">
+            <div>
+                <h1>細川 永遠</h1>
+            </div>
+        </div>
+        <div class="emikuji_box" id="nisida">
+            <div>
+                <h1>西田 響詩</h1>
+            </div>
+        </div>
+        <script>
+            const btn = document.querySelector(".btn");
+            const fukusima = document.querySelector("#fukusima");
+            const hosokawa = document.querySelector("#hosokawa");
+            const nisida = document.querySelector("#nisida");
+            const membars = document.querySelectorAll(".emikuji_box");
+            btn.addEventListener("click", () => {
+                const randomNum = Math.floor(Math.random() * membars.length);
+                console.log(randomNum);
+                fukusima.style.display = "none";
+                hosokawa.style.display = "none";
+                nisida.style.display = "none";
+
+                if (randomNum == 0) {
+                    fukusima.style.display = "flex";
+                } else if (randomNum == 1) {
+                    hosokawa.style.display = "flex";
+                } else {
+                    nisida.style.display = "flex";
+                }
+            });
+        </script>
+    </body>
+</html>
