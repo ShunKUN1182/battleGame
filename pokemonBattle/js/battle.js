@@ -11,6 +11,8 @@ const myHPbar = document.querySelector("#myHPbar");
 const cpuHPbar = document.querySelector("#cpuHPbar");
 const resetBtn = document.querySelector("#reset_btn");
 const finishTurnName = document.querySelector("#finishTurnName");
+const myUserBox = document.querySelector("#my_user_box");
+const cpuUserBox = document.querySelector("#cpu_user_box");
 let turnCount = 1;
 
 let myStatus = JSON.parse(localStorage.getItem("myCharacter"));
@@ -18,8 +20,14 @@ let cpuStatus = JSON.parse(localStorage.getItem("cpuCharacter"));
 
 myStartHP.innerHTML = `<span id="myHPIndex">${myStatus.HP}</span>/${myStatus.HP}`;
 cpuStartHP.innerHTML = `<span id="cpuHPIndex">${cpuStatus.HP}</span>/${cpuStatus.HP}`;
-myName.innerHTML = myStatus.Name;
-cpuName.innerHTML = cpuStatus.Name;
+myUserBox.innerHTML = `
+    <img src="${myStatus.IMG}" alt="" />
+    <h2 id="myName">${myStatus.Name}</h2>
+`;
+cpuUserBox.innerHTML = `
+    <img src="${cpuStatus.IMG}" alt="" />
+    <h2 id="myName">${cpuStatus.Name}</h2>
+`;
 
 function inputStatus(log = "バトル開始！！！", count = 1) {
     battleLog.innerHTML = log;
@@ -37,8 +45,6 @@ function startTurn() {
         turnName.textContent = "相手";
     }
 }
-
-function turnChange(atkSide, defSide) {}
 
 inputStatus();
 startTurn();
