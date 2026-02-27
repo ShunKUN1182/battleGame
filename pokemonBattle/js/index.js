@@ -229,7 +229,7 @@ const characters = [
         ATK: 96,
         DEF: 52,
         SPD: 74,
-        IMG: "img/hosokawa_bakemono",
+        IMG: "img/hosokawa_bakemono.jpg",
         TURN: false,
     },
     {
@@ -239,7 +239,7 @@ const characters = [
         ATK: 138,
         DEF: 94,
         SPD: 10,
-        IMG: "img/hosokawa_jusinka",
+        IMG: "img/hosokawa_jusinka.jpg",
         TURN: false,
     },
     {

@@ -120,7 +120,7 @@ resetBtn.addEventListener("click", () => {
 function HPcheck(ATkside, DEFside) {
     let damage = ATkside.ATK - DEFside.DEF;
     if (damage <= 0) {
-        const randomDamage = Math.floor(Math.random() * 5);
+        const randomDamage = Math.floor(Math.random() * 15);
         damage = randomDamage + 1;
     }
     let NewHP = DEFside.HP - damage;
