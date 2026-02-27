@@ -179,7 +179,7 @@ const characters = [
         ATK: 105,
         DEF: 40,
         SPD: 25,
-        IMG: "img/urimu.JPG",
+        IMG: "img/deisui_sakaguti.jpg",
         TURN: false,
     },
     {
