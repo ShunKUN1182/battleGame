@@ -15,11 +15,6 @@
                 <h1>福島 駿弥</h1>
             </div>
         </div>
-        <div class="emikuji_box" id="hosokawa">
-            <div>
-                <h1>細川 永遠</h1>
-            </div>
-        </div>
         <div class="emikuji_box" id="nisida">
             <div>
                 <h1>西田 響詩</h1>
@@ -28,7 +23,6 @@
         <script>
             const btn = document.querySelector(".btn");
             const fukusima = document.querySelector("#fukusima");
-            const hosokawa = document.querySelector("#hosokawa");
             const nisida = document.querySelector("#nisida");
             const membars = document.querySelectorAll(".emikuji_box");
             const sound = new Audio("oto.mp3");
@@ -43,8 +37,6 @@
                     sound.play();
                     if (randomNum == 0) {
                         fukusima.style.display = "flex";
-                    } else if (randomNum == 1) {
-                        hosokawa.style.display = "flex";
                     } else {
                         nisida.style.display = "flex";
                     }
