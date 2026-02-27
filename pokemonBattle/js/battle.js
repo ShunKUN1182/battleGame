@@ -10,6 +10,7 @@ const turnIndex = document.querySelector("#turnIndex");
 const myHPbar = document.querySelector("#myHPbar");
 const cpuHPbar = document.querySelector("#cpuHPbar");
 const resetBtn = document.querySelector("#reset_btn");
+const finishTurnName = document.querySelector("#finishTurnName");
 let turnCount = 1;
 
 let myStatus = JSON.parse(localStorage.getItem("myCharacter"));
@@ -58,18 +59,21 @@ myBtn.addEventListener("click", () => {
     const HPpercent = (NewHP.newHP / cpuStatus.MAXHP) * 100;
     cpuHPbar.style.width = `${HPpercent}%`;
     cpuHPIndex.textContent = `${cpuStatus.HP}`;
-    let logMessage = "";
-    if (cpuStatus.HP == 0) {
-        logMessage = `${myStatus.Name}の勝利！！！！${NewHP.damage}のダメージ！`;
-    } else {
-        logMessage = `${myStatus.Name}の攻撃！${NewHP.damage}のダメージ！`;
-    }
     turnCount++;
     myStatus.TURN = false;
     cpuStatus.TURN = true;
     myBtn.classList.add("no_atk");
     cpuBtn.classList.remove("no_atk");
     turnName.textContent = "相手";
+    let logMessage = "";
+    if (cpuStatus.HP == 0) {
+        logMessage = `${myStatus.Name}の勝利！！！！おめでとう！！！！`;
+        finishTurnName.textContent = "バトル終了";
+        cpuBtn.classList.add("no_atk");
+        cpuStatus.TURN = false;
+    } else {
+        logMessage = `${myStatus.Name}の攻撃！${NewHP.damage}のダメージ！`;
+    }
     inputStatus(logMessage, turnCount);
 });
 
@@ -87,18 +91,21 @@ cpuBtn.addEventListener("click", () => {
     const HPpercent = (NewHP.newHP / myStatus.MAXHP) * 100;
     myHPbar.style.width = `${HPpercent}%`;
     myHPIndex.textContent = `${myStatus.HP}`;
-    let logMessage = "";
-    if (myStatus.HP == 0) {
-        logMessage = `${cpuStatus.Name}の勝利！！！！${NewHP.damage}のダメージ！`;
-    } else {
-        logMessage = `${cpuStatus.Name}の攻撃！${NewHP.damage}のダメージ！`;
-    }
     turnCount++;
     myStatus.TURN = true;
     cpuStatus.TURN = false;
     turnName.textContent = "あなた";
     cpuBtn.classList.add("no_atk");
     myBtn.classList.remove("no_atk");
+    let logMessage = "";
+    if (myStatus.HP == 0) {
+        logMessage = `${cpuStatus.Name}の勝利！！！！おめでとう！！！！`;
+        finishTurnName.textContent = "バトル終了";
+        myBtn.classList.add("no_atk");
+        myStatus.TURN = false;
+    } else {
+        logMessage = `${cpuStatus.Name}の攻撃！${NewHP.damage}のダメージ！`;
+    }
     inputStatus(logMessage, turnCount);
 });
 
